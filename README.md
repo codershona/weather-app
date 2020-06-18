@@ -1,2 +1,14 @@
-# weather-app-
-Weather App Node.js (Asynchronous Node.js)
+# Weather App
+
+
+### Weather App Node.js (Asynchronous Node.js)
+
+
+* NOTES 
+
+```
+   - Run node app.js ;
+   - 
+
+
+```
