@@ -8,6 +8,7 @@
 
 ```
    - Run node app.js ;
+   - Call Stack --> Node APIs ---> (Event Loop) Callback Queue ;
    - 
 
 
