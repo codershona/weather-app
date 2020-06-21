@@ -23,10 +23,34 @@ request({ url: url, json: true }, (error, response) => {
 
    // run node app.js
 
-
-
-
 })
+
+
+  // GEOCODING: An HTTP Request CHallenge:
+
+   // Address -> Lat/Long -> Weather
+
+
+   const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1Ijoic2F2b3J5a2l0Y2hlbiIsImEiOiJja2JveGIxeDAxZGQzMndyNTA4bWN5a25mIn0.oHH6k9SzG1rsVqT7TYbviA'
+
+   request({ url: geocodeURL, json: true }, (error, response) => {
+    
+    const latitude = response.body.features[0].center[1]
+
+    const longitude = response.body.features[0].center[0]
+
+    console.log(latitude, longitude)
+
+
+    // run node app.js 
+
+    
+
+   })
+
+
+
+
 
 
 
