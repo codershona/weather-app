@@ -16,6 +16,7 @@
    - node app.js ;
    - node app.js ;
    - Notes : ( If you use darksky Api key(old) --> (console.log(data.currently) OR, If you use weatherstack (new) ---> (console.log(data.current)) ;
+   - node app.js ;
    - 
 
 

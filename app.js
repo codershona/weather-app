@@ -1,13 +1,29 @@
 const request = require('request')
 
 
-const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233'
+const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=f'
+// const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=m'
+// const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=s'
 
-request({ url: url }, (error, response) => {
+request({ url: url, json: true }, (error, response) => {
 	// console.log(response)
-	const data = JSON.parse(response.body)
-	// console.log(data)
-	console.log(data.current)
+	// const data = JSON.parse(response.body)
+	// // console.log(data)
+	// console.log(data.current)
+
+
+    // customizing https request:
+    // Darksky : console.log(response.body.currently)
+  // weatherstack: console.log(response.body.current)
+    // console.log(response.body.current)
+
+    // console.log("It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degress out.")
+
+    console.log(response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degress out.")
+
+   // run node app.js
+
+
 
 
 })
