@@ -1,11 +1,41 @@
 const request = require('request')
 
 
-const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=f'
+// const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=f'
 // const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=m'
 // const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=s'
 
-request({ url: url, json: true }, (error, response) => {
+// const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=&units=f'
+// const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query/37.8267,-122.4233'
+
+// request({ url: url, json: true }, (error, response) => {
+
+//     // HANDLING ERRORS :
+//       //  console.log(error)
+
+//        // run node app.js
+
+//        if (error) {
+//        	console.log('Unable to connect to weather service!')
+
+//        } else if (response.body.error) {
+//        	console.log('Unable to find location!!!!')
+
+//        }  else {
+
+//        	console.log(response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degress out.")
+
+
+//        }
+
+//        // run node app.js
+//   })
+
+
+
+
+
+
 	// console.log(response)
 	// const data = JSON.parse(response.body)
 	// // console.log(data)
@@ -19,11 +49,11 @@ request({ url: url, json: true }, (error, response) => {
 
     // console.log("It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degress out.")
 
-    console.log(response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degress out.")
+    // console.log(response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degress out.")
 
    // run node app.js
 
-})
+// })
 
 
   // GEOCODING: An HTTP Request CHallenge:
@@ -34,19 +64,48 @@ request({ url: url, json: true }, (error, response) => {
    const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1Ijoic2F2b3J5a2l0Y2hlbiIsImEiOiJja2JveGIxeDAxZGQzMndyNTA4bWN5a25mIn0.oHH6k9SzG1rsVqT7TYbviA'
 
    request({ url: geocodeURL, json: true }, (error, response) => {
-    
+
+
+   	       if (error) {
+
+ 	console.log('Unable to connect to weather service!')
+
+       // } else if (response.body.error) {
+
+       	// console.log('Unable to find location!!!!')
+
+       }  else {
+
+   //console.log(response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degress out.")
+          
     const latitude = response.body.features[0].center[1]
 
     const longitude = response.body.features[0].center[0]
 
     console.log(latitude, longitude)
 
+       }
+
+  })
+
+  
+
+
+    // const latitude = response.body.features[0].center[1]
+
+    // const longitude = response.body.features[0].center[0]
+
+    // console.log(latitude, longitude)
+
 
     // run node app.js 
 
-    
+   // })
 
-   })
+
+
+
+
 
 
 
