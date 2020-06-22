@@ -2,6 +2,8 @@ const request = require('request')
 
 const geocode = require('./utils/geocode')
 
+const forecast = require('./utils/forecast')
+
 
 // const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=f'
 // const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=m'
@@ -163,6 +165,10 @@ const geocode = require('./utils/geocode')
 
 // }
 
+
+// geo code method:
+
+
 // geocode('New York', (error, data) => {
 	// geocode('12what', (error, data) => {
  // geocode('Philadelphia', (error, data) => {
@@ -173,6 +179,16 @@ const geocode = require('./utils/geocode')
    
 
 })
+
+
+ // Call Abstraction challenge:
+
+  forecast(-75.7088, 44.1545, (error, data) => {
+ 	 //forecast('-75.7088', 44.1545, (error, data) => {
+ 	console.log('Error', error)
+ 	console.log('Data', data)
+
+ })
 
 
 
