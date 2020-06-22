@@ -4,13 +4,34 @@ const geocode = require('./utils/geocode')
 
 const forecast = require('./utils/forecast')
 
+
+ // Destructing and Property Shorthand Challenge:
+
+
+
 const address = process.argv[2]
 
 if (!address) {
 	console.log('Please provide an address')
 } else {
 
-	 geocode(address, (error, data) => {
+	 // geocode(address, (error, data) => {
+
+
+ geocode(address, (error, { latitude, longitude, location } = {}) => {
+
+
+
+	 		// ES6: Default Function Parameters:
+
+	 // const greet = (name = 'User') => {
+	 	// console.log('Hello, ' + name + '!')
+
+
+	// }
+
+	// greet('John') // will print: hello, John!
+	// greet() // Will print: Hello, User!
 
     if (error) {
     	return console.log(error)
@@ -18,14 +39,15 @@ if (!address) {
     } 
 
     // method 5:
-      forecast(data.latitude, data.longitude, (error, forecastData) => {
+      // forecast(data.latitude, data.longitude, (error, forecastData) => {
+      	forecast(latitude, longitude, (error, forecastData) => {
 
       if (error) {
 
       	return console.log(error)
       }
 
-      console.log(data.location)
+      console.log(location)
 
       console.log(forecastData)
    })
