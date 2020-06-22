@@ -4,6 +4,39 @@ const geocode = require('./utils/geocode')
 
 const forecast = require('./utils/forecast')
 
+const address = process.argv[2]
+
+if (!address) {
+	console.log('Please provide an address')
+} else {
+
+	 geocode(address, (error, data) => {
+
+    if (error) {
+    	return console.log(error)
+
+    } 
+
+    // method 5:
+      forecast(data.latitude, data.longitude, (error, forecastData) => {
+
+      if (error) {
+
+      	return console.log(error)
+      }
+
+      console.log(data.location)
+
+      console.log(forecastData)
+   })
+
+})
+
+
+}
+
+// console.log(process.argv)
+
 
 // const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=f'
 // const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=m'
@@ -173,22 +206,48 @@ const forecast = require('./utils/forecast')
 	// geocode('12what', (error, data) => {
  // geocode('Philadelphia', (error, data) => {
  	 // geocode('Philadelphia New York', (error, data) => {
- geocode('Boston', (error, data) => {
-	console.log('Error', error)
-    console.log('Data', data) 
-   
+ // geocode('Boston', (error, data) => {
+//  	 geocode(address, (error, data) => {
 
-})
+//     if (error) {
+//     	return console.log(error)
+
+//     } 
+
+// 	// console.log('Error', error)
+//  //    console.log('Data', data) 
+
+//     // method 5:
+//       forecast(data.latitude, data.longitude, (error, forecastData) => {
+
+//       if (error) {
+
+//       	return console.log(error)
+//       }
+
+//       console.log(data.location)
+
+//       console.log(forecastData)
+
+
+//  	// console.log('Error', error)
+//  	// console.log('Data', data)
+
+//    })
+
+// })
+
+
 
 
  // Call Abstraction challenge:
 
-  forecast(-75.7088, 44.1545, (error, data) => {
- 	 //forecast('-75.7088', 44.1545, (error, data) => {
- 	console.log('Error', error)
- 	console.log('Data', data)
+ //  forecast(-75.7088, 44.1545, (error, data) => {
+ // 	 //forecast('-75.7088', 44.1545, (error, data) => {
+ // 	console.log('Error', error)
+ // 	console.log('Data', data)
 
- })
+ // })
 
 
 
