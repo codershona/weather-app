@@ -1,5 +1,7 @@
 const request = require('request')
 
+const geocode = require('./utils/geocode')
+
 
 // const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=f'
 // const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query=37.8267,-122.4233&units=m'
@@ -61,32 +63,57 @@ const request = require('request')
    // Address -> Lat/Long -> Weather
 
 
-   const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1Ijoic2F2b3J5a2l0Y2hlbiIsImEiOiJja2JveGIxeDAxZGQzMndyNTA4bWN5a25mIn0.oHH6k9SzG1rsVqT7TYbviA'
+//    const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1Ijoic2F2b3J5a2l0Y2hlbiIsImEiOiJja2JveGIxeDAxZGQzMndyNTA4bWN5a25mIn0.oHH6k9SzG1rsVqT7TYbviA'
 
-   request({ url: geocodeURL, json: true }, (error, response) => {
+//    request({ url: geocodeURL, json: true }, (error, response) => {
 
 
-   	       if (error) {
+//    	       if (error) {
 
- 	console.log('Unable to connect to weather service!')
+//  	console.log('Unable to connect to weather service!')
 
-       } else if (response.body.features.length === 0) {
+//        } else if (response.body.features.length === 0) {
 
- console.log('Unable to find location!!!!, Try another search')
+//  console.log('Unable to find location!!!!, Try another search')
 
-       }  else {
+//        }  else {
 
-   //console.log(response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degress out.")
+//    //console.log(response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degress out.")
           
-    const latitude = response.body.features[0].center[1]
+//     const latitude = response.body.features[0].center[1]
 
-    const longitude = response.body.features[0].center[0]
+//     const longitude = response.body.features[0].center[0]
 
-    console.log(latitude, longitude)
+//     console.log(latitude, longitude)
 
-       }
+//     // paste it in:
 
-  })
+// //     const url = 'http://api.weatherstack.com/current?access_key=5d603d1b7243e2be9be5afe01e214167&query/37.8267,-122.4233'
+
+// // request({ url: url, json: true }, (error, response) => {
+
+// //     // HANDLING ERRORS :
+// //       //  console.log(error)
+
+// //        // run node app.js
+
+// //        if (error) {
+// //        	console.log('Unable to connect to weather service!')
+
+// //        } else if (response.body.error) {
+// //        	console.log('Unable to find location!!!!')
+
+// //        }  else {
+
+// //        	console.log(response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degress out. It feels like " + response.body.current.feelslike + " degress out.")
+
+
+// //        }
+
+
+//        }
+
+//   })
 
   
 
@@ -107,9 +134,45 @@ const request = require('request')
 
 
 
+// method 3 : Callback abstraction:
 
+// const geocode = (address, callback) => {
+ 
+//  // const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '.json?access_token=pk.eyJ1Ijoic2F2b3J5a2l0Y2hlbiIsImEiOiJja2JveGIxeDAxZGQzMndyNTA4bWN5a25mIn0.oHH6k9SzG1rsVqT7TYbviA'
+//  const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1Ijoic2F2b3J5a2l0Y2hlbiIsImEiOiJja2JveGIxeDAxZGQzMndyNTA4bWN5a25mIn0.oHH6k9SzG1rsVqT7TYbviA'
+  
 
+// // ? becomes %3F
 
+//    request({ url: url, json: true }, (error, response) => {
+//       if (error) {
+//       	callback('Unable to connect to the locations of the services!!!!', undefined)
+//       } else if (response.body.features.length === 0) {
+//       	callback('Unable to find locations. Please, Try Another Search!!!', undefined)
+
+//       } else {
+//       	callback(undefined, {
+//       		latitude: response.body.features[0].center[0],
+//       		longitude: response.body.features[0].center[1],
+//       		location: response.body.features[0].place_name
+
+//       	})
+//       }
+
+//    })
+
+// }
+
+// geocode('New York', (error, data) => {
+	// geocode('12what', (error, data) => {
+ // geocode('Philadelphia', (error, data) => {
+ 	 // geocode('Philadelphia New York', (error, data) => {
+ geocode('Boston', (error, data) => {
+	console.log('Error', error)
+    console.log('Data', data) 
+   
+
+})
 
 
 
