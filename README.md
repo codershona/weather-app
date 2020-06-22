@@ -17,6 +17,7 @@
    - node app.js ;
    - Notes : ( If you use darksky Api key(old) --> (console.log(data.currently) OR, If you use weatherstack (new) ---> (console.log(data.current)) ;
    - node app.js ;
+   - (ERROR in github to solve): (fatal: Could not read from remote repository.) =====> Run this command --> git push origin dev ;
    - 
 
 
