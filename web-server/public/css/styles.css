@@ -1,4 +1,4 @@
-h1 {
+/*h1 {
 	color: red;
 	
 }
@@ -8,4 +8,48 @@ img {
 	width: 350px;
 
 }
+*/
 
+body {
+	color: #130f40;
+	font-family: sans-serif;
+	max-width: 650px;
+	margin: 0 auto;
+	padding: 0 16px;
+
+
+}
+
+
+footer {
+	color: #535c68;
+	border-top: 1px solid #dfe6e9;
+	/*background: #95afc0;*/
+	margin-top: 16px;
+	padding: 16px 0;
+
+
+}
+
+
+header {
+	margin-top: 16px;
+	margin-bottom: 48px;
+    
+
+}
+
+
+h1 {
+	font-size: 65px;
+	margin-bottom: 17px;
+
+}
+
+
+header a {
+	color: #2d3436;
+	margin-right: 17px;
+	text-decoration: none;
+
+}
