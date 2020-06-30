@@ -23,6 +23,7 @@
    - // Advanced Templating: 
    - // 404 Pages: see in the browser--> http://localhost:3000/help/data + http://localhost:3000/help/test;
    - // Styling the Application : Part 1 & 2;
-   - 
+   - Run this command nodemon src/app.js -e js,hbs;
+   
 
 ```
