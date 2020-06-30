@@ -11,13 +11,26 @@ img {
 */
 
 body {
+	min-height: 100vh;
+	/*min-height: 50vh;*/
 	color: #130f40;
 	font-family: sans-serif;
 	max-width: 650px;
 	margin: 0 auto;
 	padding: 0 16px;
 
+    display: flex;
+    /*flex-direction: row;
+    */
 
+    flex-direction: column;
+
+}
+
+
+.main-content {
+	flex-grow: 1;
+	
 }
 
 
@@ -53,3 +66,15 @@ header a {
 	text-decoration: none;
 
 }
+
+/*img {
+	width: 250px;
+
+}*/
+
+.portrait {
+	width: 250px;
+	
+}
+
+
