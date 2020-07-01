@@ -29,6 +29,6 @@
    - Run the server: nodemon src/app.js -e js,hbs ;
    - See in browser: http://localhost:3000/weather?address=boston ;
    - Run now npm i request@2.88.0 ;
-   - Run this nodemon src/app.js -e js,hbs ;- 
+   - Run this nodemon src/app.js -e js,hbs ;
 
 ```

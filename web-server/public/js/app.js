@@ -74,9 +74,9 @@ weatherForm.addEventListener('submit', (e) => {
       } else {
          
          messageOne.textContent = data.location
-       messageTwo.textContent = data.forecast
+      // messageTwo.textContent = data.forecast
           // messageTwo.textContent = `It is now ${data.forecast.temparature} degrees out`
-           // messageTwo.textContent = `It is now ${data.forecast} degrees out`
+          messageTwo.textContent = `It is now ${data.forecast} degrees out`
 
          console.log(data.location)
          console.log(data.forecast)
