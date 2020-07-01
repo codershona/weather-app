@@ -13,30 +13,60 @@ fetch('http://puzzle.mead.io/puzzle').then((response) => {
 // Another Api:
 
 // fetch('http://localhost:3000/weather?address=!').then(() => {
-	// fetch('http://localhost:3000/weather?address=').then(() => {
+// 	// fetch('http://localhost:3000/weather?address=').then(() => {
 
-fetch('http://localhost:3000/weather?address=boston').then(() => {
-   response.json().then((data) => {
-   	if (data.error) {
-   		console.log(data.error)
+// // fetch('http://localhost:3000/weather?address=boston').then(() => {
+//    response.json().then((data) => {
+//    	if (data.error) {
+//    		console.log(data.error)
 
-   	} else {
-   		console.log(data.location)
-   		console.log(data.forecast)
+//    	} else {
+//    		console.log(data.location)
+//    		console.log(data.forecast)
      
-   	}
+//    	}
 
-   })
+//    })
 
-})
+// })
 
 
 
 const weatherForm = document.querySelector('form')
 
-weatherForm.addEventListener('', () => {
-   
-   console.log('!!!TESTING')
+const search = document.querySelector('input')
+
+weatherForm.addEventListener('submit', (e) => {
+
+   e.preventDefault()
+
+   const location = search.value
+
+   // console.log('!!!TESTING')
+  // console.log(location)
+
+
+  fetch('http://localhost:3000/weather?address=' + location).then(() => {
+   // fetch('http://localhost:3000/weather?address=').then(() => {
+
+// fetch('http://localhost:3000/weather?address=boston').then(() => {
+   response.json().then((data) => {
+      if (data.error) {
+         console.log(data.error)
+
+      } else {
+         console.log(data.location)
+         console.log(data.forecast)
+     
+      }
+
+   })
+
+ })
 
 
 })
+
+
+
+
