@@ -1,13 +1,13 @@
 console.log('Client side javscript file is loaded!!')
 
-fetch('http://puzzle.mead.io/puzzle').then((response) => {
-	response.json().then((data) => {
-		console.log(data)
+// fetch('http://puzzle.mead.io/puzzle').then((response) => {
+// 	response.json().then((data) => {
+// 		console.log(data)
 
 
-	})
+// 	})
 
-})
+// })
 
 
 // Another Api:
@@ -39,6 +39,7 @@ const search = document.querySelector('input')
 // const messageOne = document.querySelector('p')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
+// const demo = JSON.stringify(data.forecast)
 
 // messageOne.textContent = 'From Javascript'
 
@@ -61,7 +62,7 @@ weatherForm.addEventListener('submit', (e) => {
   // console.log(location)
 
 
-  fetch('http://localhost:3000/weather?address=' + location).then(() => {
+  fetch('http://localhost:3000/weather?address=' + location).then((response) => {
    // fetch('http://localhost:3000/weather?address=').then(() => {
 
 // fetch('http://localhost:3000/weather?address=boston').then(() => {
@@ -73,10 +74,16 @@ weatherForm.addEventListener('submit', (e) => {
       } else {
          
          messageOne.textContent = data.location
-         messageTwo.textContent = data.forecast
+       messageTwo.textContent = data.forecast
+          // messageTwo.textContent = `It is now ${data.forecast.temparature} degrees out`
+           // messageTwo.textContent = `It is now ${data.forecast} degrees out`
 
-         // console.log(data.location)
-         // console.log(data.forecast)
+         console.log(data.location)
+         console.log(data.forecast)
+
+        
+
+        //  messageTwo.textContent = demo
 
          
      
