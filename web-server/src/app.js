@@ -103,13 +103,59 @@ app.get('/help', (req, res) => {
 })
 
 
+// app.get('/weather', (req, res) => {
+// 	// res.send('Weather page!!')
+// 	res.send({
+// 		forecast: 'It is snowing',
+// 		location: 'Philadelphia'
+// 	})
+// })
+
 app.get('/weather', (req, res) => {
 	// res.send('Weather page!!')
+
+     if (!req.query.address) {
+      return res.send({
+      	error: 'YOU NEED TO PROVIDE YOUR ADDRESS'
+
+      })
+
+     }
+
+
+
 	res.send({
 		forecast: 'It is snowing',
-		location: 'Philadelphia'
+		location: 'Philadelphia',
+		address: req.query.address
 	})
 })
+
+
+
+
+
+app.get('/products', (req, res) => {
+	// res.send('Weather page!!')
+	// req.query
+	// console.log(req.query)
+	if (!req.query.search) {
+      return res.send({
+      	error: 'YOU MUST PROVIDES SEARCH TERMS'
+
+
+      })
+
+	} 
+	console.log(req.query.search)
+	res.send({
+
+		products: []
+
+	})
+})
+
+
 
 app.get('/help/*', (req, res) => {
 	// res.send('Help article not Found!!!!')
