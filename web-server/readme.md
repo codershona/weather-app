@@ -31,10 +31,17 @@
    - Run now npm i request@2.88.0 ;
    - Run this nodemon src/app.js -e js,hbs ;
 
-   * HEROKU :
+   * HEROKU SETUP :
    - heroku -v ;
    - heroku login ;
    - git --version;
+   - Setting up SSH KEYS: ls -a -l ~/.ssh ;
+   - ssh-keygen -t rsa -b 4096 -C "email address" ;
+   - eval "$(ssh-agent -s)" ;
+   - ssh-add -K ~/.ssh/id_rsa ;
+   - heroku keys:add ;
+   - heroku create node-weather-app ;
+   - npm run start ;
    - 
 
 

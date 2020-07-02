@@ -62,10 +62,12 @@ weatherForm.addEventListener('submit', (e) => {
   // console.log(location)
 
 
-  fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+  // fetch('http://localhost:3000/weather?address=' + location).then((response) => {
    // fetch('http://localhost:3000/weather?address=').then(() => {
 
 // fetch('http://localhost:3000/weather?address=boston').then(() => {
+
+  fetch('/weather?address=' + location).then((response) => {
    response.json().then((data) => {
       if (data.error) {
          // console.log(data.error)
