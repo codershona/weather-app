@@ -28,6 +28,21 @@
    - See in browser: localhost:3000/products?search=games&rating=5 ;
    - Run the server: nodemon src/app.js -e js,hbs ;
    - See in browser: http://localhost:3000/weather?address=boston ;
+   - Run now npm i request@2.88.0 ;
+   - Run this nodemon src/app.js -e js,hbs ;
+
+   * HEROKU SETUP :
+   - heroku -v ;
+   - heroku login ;
+   - git --version;
+   - Setting up SSH KEYS: ls -a -l ~/.ssh ;
+   - ssh-keygen -t rsa -b 4096 -C "email address" ;
+   - eval "$(ssh-agent -s)" ;
+   - ssh-add -K ~/.ssh/id_rsa ;
+   - heroku keys:add ;
+   - heroku create node-weather-app ;
+   - npm run start ;
    - 
+
 
 ```
