@@ -34,7 +34,8 @@
    * HEROKU :
    - heroku -v ;
    - heroku login ;
-   -
+   - git --version;
+   - 
 
 
 ```
