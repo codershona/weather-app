@@ -31,4 +31,10 @@
    - Run now npm i request@2.88.0 ;
    - Run this nodemon src/app.js -e js,hbs ;
 
+   * HEROKU :
+   - heroku -v ;
+   - heroku login ;
+   -
+
+
 ```
